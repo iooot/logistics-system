@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>客户订单查询</title>
+        <link rel="stylesheet" href="/common/css/font.css">
+        <link rel="stylesheet" href="/common/css/xadmin.css">
+    </head>
+
+    <body>
+        <div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="/function/order/order-list.html" target="_blank" style="cursor:pointer;color: blue">所有订单说明</a>
+        <a>查看订单信息</a>
+      </span>
+            <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
+               href="javascript:location.replace(location.href);" title="刷新">
+                <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+        </div>
+        <div class="x-body">
+            <div class="layui-row">
+                <div class="layui-form layui-col-md12 x-so">
+                    <span style="font-size: 16px">订单时间</span>
+                    <input type="date" id="beginordertime" autocomplete="off" class="layui-input">
+                    <input type="date" id="endordertime" autocomplete="off" class="layui-input">
+                    <input type="text" id="content" placeholder="请输入订单相关信息" autocomplete="off"
+                           class="layui-input" style="margin-left:10px;">
+                    <a class="layui-btn layui-btn-small" style="line-height:2.0em;"
+                       href="javascript:void(0);" onclick="serchContent()">
+                        <i class="layui-icon" style="line-height:30px">&#xe615;</i></a>
+                </div>
+            </div>
+            <xblock>
+                <button style="background-color:#f2f2f2"></button>
+                <span class="x-right" style="line-height:40px" id="totalCount">共有数据：88 条</span>
+            </xblock>
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th style="text-align: center;width:5%;">序号</th>
+                        <th style="text-align: center;width:10%;">下单时间</th>
+                        <th style="text-align: center;width:15%;">订单编号</th>
+                        <th style="text-align: center;width:10%;">下单用户</th>
+                        <th style="text-align: center;width:10%;">物流费用</th>
+                        <th style="text-align: center;width:15%;">收件人</th>
+                        <th style="text-align: center;width:20%;">联系方式</th>
+                        <th style="text-align: center;width:15%">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="listtbody" style="overflow-x:auto">
+
+                </tbody>
+            </table>
+            <div class="page" id="xxlistpage">
+                <div>
+                    <a class="prev" href="">&lt;&lt;</a>
+                    <a class="num" href="">1</a>
+                    <span class="current">2</span>
+                    <a class="num" href="">3</a>
+                    <a class="num" href="">489</a>
+                    <a class="next" href="">&gt;&gt;</a>
+                </div>
+            </div>
+        </div>
+
+        <script src="/common/js/jquery-3.2.1.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="/common/lib/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript" src="/common/js/xadmin.js"></script>
+        <script type="text/javascript" src="js/personorderlist.js"></script>
+    </body>
+</html>

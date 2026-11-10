@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+
+    <!-- 总页数 -->
+    <item id="pageCount">10.0</item>
+    <!-- 获取所有用户 -->
+    <item id="userLogStr">SELECT * FROM sys_fuc_users where logname =? and pwd=? and rowstate = '1'</item>
+
+    <item id="updateSysInfo">update systeminfo set sysname=?,leibie=?,content=?</item>
+
+    <item id="userPageListInfoList">
+        SELECT u.id,u.logname,u.username,u.pwd,u.phone,u.email,r.val AS role,u.bem,u.rowstate,u.sex,
+        u.homeAddress,u.createtime FROM sys_fuc_users u INNER JOIN sys_role r ON r.vkey = u.role
+        WHERE u.rowstate = '1' AND (u.logname LIKE '%{1}%' OR u.username LIKE '%{1}%'
+        OR u.phone LIKE '%{1}%' OR u.email LIKE '%{1}%' OR r.val LIKE '%{1}%'
+        OR u.bem LIKE '%{1}%' OR u.sex LIKE '%{1}%' OR u.homeAddress LIKE '%{1}%')
+        ORDER BY u.createtime desc
+    </item>
+
+    <item id="deluserPageListInfoList">
+        SELECT * FROM sys_fuc_users WHERE rowstate = '2' AND (logname LIKE '%{1}%' OR username LIKE '%{1}%'
+        OR phone LIKE '%{1}%' OR email LIKE '%{1}%' OR bem LIKE '%{1}%' OR sex LIKE '%{1}%'
+        OR homeAddress LIKE '%{1}%') ORDER BY createtime desc
+    </item>
+
+    <item id="userInfodel">update sys_fuc_users set rowstate = '2' WHERE id = ?</item>
+
+    <item id="roleListInit">
+        SELECT * FROM sys_role WHERE 1=1 and (val like '%{1}%' or vkey like '%{1}%' or
+        bem like '%{1}%')
+        ORDER BY createtime desc
+    </item>
+
+    <item id="cdList">
+        SELECT * FROM cdinfo WHERE fnid='0' and (cname like '%{1}%' or cpath like '%{1}%') order by indx
+    </item>
+
+    <item id="bbsDel">delete FROM sys_fuc_bbs WHERE id = ?</item>
+</Configuration>

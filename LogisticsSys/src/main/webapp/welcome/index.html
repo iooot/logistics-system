@@ -1,0 +1,88 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>欢迎页</title>
+        <meta name="description"
+              content="A responsive coming soon template, un template HTML pour une page en cours de construction">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/pageloader.css">
+        <link rel="stylesheet" href="fonts/opensans/stylesheet.css">
+        <link rel="stylesheet" href="fonts/asap/stylesheet.css">
+        <link rel="stylesheet" href="css/ionicons.css">
+
+        <!-- Vendor CSS style -->
+        <link rel="stylesheet" href="css/foundation.min.css">
+        <link rel="stylesheet" href="js/vendor/jquery.fullPage.css">
+        <link rel="stylesheet" href="js/vegas/vegas.min.css">
+
+        <!-- Main CSS files -->
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/main_responsive.css">
+        <link rel="stylesheet" href="css/style-font1.css">
+
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    </head>
+    <body id="menu" class="alt-bg">
+        <div class="page-loader" id="page-loader">
+            <div><i class="ion ion-loading-d"></i>
+                <p>loading</p></div>
+        </div>
+
+        <header class="header-top">
+        </header>
+        <div class="page-cover" id="home">
+            <div class="cover-bg pos-abs full-size bg-img" data-image-src="img/bg-default.jpg"></div>
+            <div class="cover-bg pos-abs full-size slide-show">
+                <i class='img' data-src='img/bg-default.jpg'></i>
+            </div>
+            <div class="cover-bg pos-abs full-size bg-color" data-bgcolor="rgba(51, 2, 48, 0.12)"></div>
+        </div>
+        <main class="page-main" id="mainpage">
+            <div class="section page-home page page-cent" id="s-home">
+
+                <section class="content">
+
+                    <header class="header">
+                        <div class="h-left">
+                            <h2 style="font-size: 90px;color:#fdf6eb">欢迎进入
+                                <strong id="systemName" style="font-size:85px;"></strong>
+                            </h2>
+                        </div>
+
+                    </header>
+                </section>
+            </div>
+            <section class="content">
+                <div class="clock clock-countdown">
+                    <div class="site-config"
+                         data-date="10/31/2015 23:00:00"
+                         data-date-timezone="+0"></div>
+                </div>
+            </section>
+            </div>
+        </main>
+        <script src="js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="js/vendor/all.js"></script>
+        <script src="js/jquery.downCount.js"></script>
+        <script src="js/form_script.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            $(function () {
+                $.ajax({
+                    type: 'POST',
+                    url: "/syslogin/systemName",
+                    async: false,
+                    dataType: 'text',
+                    data: {}, success: function (e) {
+                        $("#systemName").html(e);
+                    }
+                })
+            })
+        </script>
+    </body>
+</html>

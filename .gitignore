@@ -1,0 +1,24 @@
+# ---- 构建产物 ----
+target/
+*.class
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# ---- IDE ----
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# ---- 系统文件 ----
+.DS_Store
+Thumbs.db
+
+# ---- 日志与临时文件 ----
+logs/
+*.log
+hs_err_pid*
+
+# ---- AI 工作区数据（个人会话记录，不属于项目代码）----
+.workbuddy-ai/

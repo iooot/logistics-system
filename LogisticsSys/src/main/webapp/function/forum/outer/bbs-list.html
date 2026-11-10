@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>论坛</title>
+        <link rel="stylesheet" href="../../../common/css/font.css">
+        <link rel="stylesheet" href="../../../common/css/xadmin.css">
+        <script src="../../../common/js/jquery-3.2.1.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="../../../common/lib/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript" src="../../../common/js/xadmin.js"></script>
+        <script type="text/javascript" src="js/bbsList.js"></script>
+    </head>
+
+    <body>
+        <div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">系统论坛</a>
+      </span>
+            <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
+               href="javascript:location.replace(location.href);" title="刷新">
+                <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+        </div>
+        <div class="x-body">
+            <div class="layui-row">
+                <div class="layui-form layui-col-md12 x-so">
+                    <input type="text" id="content" placeholder="请输入查询信息" autocomplete="off"
+                           class="layui-input">
+                    <a class="layui-btn layui-btn-small" style="line-height:2.0em;"
+                       href="javascript:void(0);" onclick="serchContent()">
+                        <i class="layui-icon" style="line-height:30px">&#xe615;</i></a>
+                </div>
+            </div>
+            <xblock>
+                <button class="layui-btn" onclick="x_admin_show('新增帖子','/function/forum/outer/addbbsInfo.jsp')"><i
+                        class="layui-icon"></i>新增帖子
+                </button>
+                <span class="x-right" style="line-height:40px" id="totalCount">共有数据：88 条</span>
+            </xblock>
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th style="width:5%;text-align: center;">序号</th>
+                        <th style="width:10%;text-align: center;">帖子类型</th>
+                        <th style="width:40%;text-align: center;">帖子名称</th>
+                        <th style="width:25%;text-align: center;">帖子创建人</th>
+                        <th style="width:20%;text-align: center;">创建时间</th>
+                    </tr>
+                </thead>
+                <tbody id="xxlisttbody">
+                    <tr>
+
+                    </tr>
+                </tbody>
+            </table>
+            <div class="page" id="xxlistpage">
+                <div>
+                    <a class="prev" href="">&lt;&lt;</a>
+                    <a class="num" href="">1</a>
+                    <span class="current">2</span>
+                    <a class="num" href="">3</a>
+                    <a class="num" href="">489</a>
+                    <a class="next" href="">&gt;&gt;</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
